@@ -1,11 +1,20 @@
 import { MdOutlineEditNote } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
-
-import { useGetAllPostQuery } from "./../../redux/slice/post"
+import { useGetAllPostQuery, useDeletePostMutation } from "./../../redux/slice/post"
 
 const List = () => {
+    const { data, refetch } = useGetAllPostQuery();
+    const [deletePost] = useDeletePostMutation();
 
-    const { data } = useGetAllPostQuery();
+    const handleDeletePost = async (postId) => {
+        try {
+            await deletePost(postId);
+            await refetch();
+        } catch (error) {
+            console.error('Error deleting post:', error);
+        }
+    };
+
     if (!data) {
         return <div>Loading...</div>;
     }
@@ -26,7 +35,7 @@ const List = () => {
                             </div>
                             <div className="text-center w-20">
                                 <button className="text-2xl"><MdOutlineEditNote className="text-green-400" /></button>
-                                <button className="ml-2 text-2xl"><MdDelete className="text-red-600" /></button>
+                                <button className="ml-2 text-2xl" onClick={() => handleDeletePost(post._id)}><MdDelete className="text-red-600" /></button>
                             </div>
                         </div>
                     ))
@@ -36,4 +45,4 @@ const List = () => {
     )
 }
 
-export default List
+export default List;
