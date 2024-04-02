@@ -12,6 +12,14 @@ export const postApiSlice = createApi({
                 url: "posts",
                 method: "GET"
             })
+        }),
+        deletePost: builder.mutation({
+            query: (postId) => {
+                return {
+                    url: `posts/${postId}`,
+                    method: 'DELETe'
+                }
+            }
         })
     })
 })
