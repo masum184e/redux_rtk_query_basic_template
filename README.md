@@ -1,3 +1,9 @@
+## Redux RTK Query Basic Template
+
+## Preview
+<img src="https://github.com/masum184e/redux-rtk-query-basic-template/blob/main/preview.png" >
+<a href="https://redux-rtk-query-basic-template.vercel.app/"><b>Live View</b></a>
+
 ## Requirements
 
 [Install Node On Your Device](https://nodejs.org/)
