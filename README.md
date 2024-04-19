@@ -155,3 +155,33 @@ npm run dev
     };
 
     export default Form;
+
+## Structure
+
+```
+├─ redux
+│  ├─ store.js
+│  ├─ slice
+│     └─ post.js
+│
+├─ src
+│  ├─components
+│  │ ├─ Form.jsx
+│  │ └─ List.jsx
+│  │
+│  ├─ App.jsx
+│  ├─ index.css
+│  └─ main.jsx
+│
+├─ .env
+├─ .eslintrc.cjs
+├─ .gitignore
+├─ index.html
+├─ package-lock.json
+├─ postcss.config.js
+├─ preview.png
+├─ README.md
+├─ tailwind.config.js
+├─ vercel.json
+└─ vite.config.js
+```
